@@ -1,0 +1,68 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : Schem2.vf
+// /___/   /\     Timestamp : 04/29/2020 19:57:53
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family virtex5 -verilog D:/Xilinx/laba4/Schem2.vf -w D:/Xilinx/laba4/Schem2.sch
+//Design Name: Schem2
+//Device: virtex5
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module Schem2(C, 
+              J, 
+              K, 
+              notQ, 
+              Q);
+
+    input C;
+    input J;
+    input K;
+   output notQ;
+   output Q;
+   
+   wire XLXN_76;
+   wire XLXN_79;
+   wire XLXN_108;
+   wire XLXN_109;
+   wire XLXN_114;
+   wire XLXN_115;
+   wire Q_DUMMY;
+   wire notQ_DUMMY;
+   
+   assign notQ = notQ_DUMMY;
+   assign Q = Q_DUMMY;
+   AND2  XLXI_1 (.I0(XLXN_79), 
+                .I1(C), 
+                .O(XLXN_115));
+   INV  XLXI_2 (.I(XLXN_109), 
+               .O(notQ_DUMMY));
+   INV  XLXI_3 (.I(XLXN_108), 
+               .O(Q_DUMMY));
+   AND2  XLXI_4 (.I0(C), 
+                .I1(XLXN_76), 
+                .O(XLXN_114));
+   OR2  XLXI_23 (.I0(notQ_DUMMY), 
+                .I1(XLXN_114), 
+                .O(XLXN_108));
+   OR2  XLXI_24 (.I0(XLXN_115), 
+                .I1(Q_DUMMY), 
+                .O(XLXN_109));
+   AND2  XLXI_37 (.I0(J), 
+                 .I1(notQ_DUMMY), 
+                 .O(XLXN_76));
+   AND2  XLXI_38 (.I0(Q_DUMMY), 
+                 .I1(K), 
+                 .O(XLXN_79));
+endmodule

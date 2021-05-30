@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "D:/Xilinx/JK/sch3_sch3_sch_tb_isim_beh.exe" -prj "D:/Xilinx/JK/sch3_sch3_sch_tb_beh.prj" "work.sch3_sch3_sch_tb" "work.glbl" 

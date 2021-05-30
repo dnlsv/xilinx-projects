@@ -1,0 +1,99 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : Scheme2.vf
+// /___/   /\     Timestamp : 03/13/2020 22:48:08
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family virtex5 -verilog C:/Xilinx/workingdir/Laba3/Scheme2.vf -w C:/Xilinx/workingdir/Laba3/Scheme2.sch
+//Design Name: Scheme2
+//Device: virtex5
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module Scheme2(D, 
+               X0, 
+               X1, 
+               X2, 
+               Y0, 
+               Y1, 
+               Y2, 
+               Y3, 
+               Y4, 
+               Y5, 
+               Y6, 
+               Y7);
+
+    input D;
+    input X0;
+    input X1;
+    input X2;
+   output Y0;
+   output Y1;
+   output Y2;
+   output Y3;
+   output Y4;
+   output Y5;
+   output Y6;
+   output Y7;
+   
+   wire XLXN_47;
+   wire XLXN_51;
+   wire XLXN_55;
+   
+   AND4  XLXI_2 (.I0(XLXN_47), 
+                .I1(XLXN_55), 
+                .I2(XLXN_51), 
+                .I3(D), 
+                .O(Y0));
+   AND4  XLXI_3 (.I0(X0), 
+                .I1(XLXN_55), 
+                .I2(XLXN_51), 
+                .I3(D), 
+                .O(Y1));
+   AND4  XLXI_4 (.I0(XLXN_47), 
+                .I1(X1), 
+                .I2(XLXN_51), 
+                .I3(D), 
+                .O(Y2));
+   AND4  XLXI_5 (.I0(X0), 
+                .I1(X1), 
+                .I2(XLXN_51), 
+                .I3(D), 
+                .O(Y3));
+   AND4  XLXI_6 (.I0(XLXN_47), 
+                .I1(XLXN_55), 
+                .I2(X2), 
+                .I3(D), 
+                .O(Y4));
+   AND4  XLXI_7 (.I0(X0), 
+                .I1(XLXN_55), 
+                .I2(X2), 
+                .I3(D), 
+                .O(Y5));
+   AND4  XLXI_8 (.I0(XLXN_47), 
+                .I1(X1), 
+                .I2(X2), 
+                .I3(D), 
+                .O(Y6));
+   AND4  XLXI_9 (.I0(X0), 
+                .I1(X1), 
+                .I2(X2), 
+                .I3(D), 
+                .O(Y7));
+   INV  XLXI_23 (.I(X2), 
+                .O(XLXN_51));
+   INV  XLXI_24 (.I(X1), 
+                .O(XLXN_55));
+   INV  XLXI_25 (.I(X0), 
+                .O(XLXN_47));
+endmodule

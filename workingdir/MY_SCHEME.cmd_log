@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "C:/Xilinx/workingdir/MY_SCHEME.xst" -ofn "C:/Xilinx/workingdir/MY_SCHEME.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc5vlx20t-ff323-2 MY_SCHEME.ngc MY_SCHEME.ngd  

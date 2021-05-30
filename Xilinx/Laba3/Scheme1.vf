@@ -1,0 +1,247 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : Scheme1.vf
+// /___/   /\     Timestamp : 03/13/2020 19:53:39
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family virtex5 -verilog C:/Xilinx/workingdir/Laba3/Scheme1.vf -w C:/Xilinx/workingdir/Laba3/Scheme1.sch
+//Design Name: Scheme1
+//Device: virtex5
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale  100 ps / 10 ps
+
+module D3_8E_HXILINX_Scheme1 (D0, D1, D2, D3, D4, D5, D6, D7, A0, A1, A2, E);
+    
+
+   output D0;
+   output D1;
+   output D2;
+   output D3;
+   output D4;
+   output D5;
+   output D6;
+   output D7;
+
+   input  A0;
+   input  A1;
+   input  A2;
+   input  E;
+  
+   reg D0;
+   reg D1;
+   reg D2;
+   reg D3;
+   reg D4;
+   reg D5;
+   reg D6;
+   reg D7;
+
+      always @ (A0 or A1 or A2 or E)
+      begin
+         if(!E)
+           {D7, D6, D5, D4, D3, D2, D1, D0} <= 8'b0000_0000;
+        else
+        begin
+           case({A2,A1,A0})
+             3'b000 :  {D7, D6, D5, D4, D3, D2, D1, D0} <=  8'b0000_0001;
+             3'b001 :  {D7, D6, D5, D4, D3, D2, D1, D0} <=  8'b0000_0010;
+             3'b010 :  {D7, D6, D5, D4, D3, D2, D1, D0} <=  8'b0000_0100;
+             3'b011 :  {D7, D6, D5, D4, D3, D2, D1, D0} <=  8'b0000_1000;
+             3'b100 :  {D7, D6, D5, D4, D3, D2, D1, D0} <=  8'b0001_0000;
+             3'b101 :  {D7, D6, D5, D4, D3, D2, D1, D0} <=  8'b0010_0000;
+             3'b110 :  {D7, D6, D5, D4, D3, D2, D1, D0} <=  8'b0100_0000;
+             3'b111 :  {D7, D6, D5, D4, D3, D2, D1, D0} <=  8'b1000_0000;
+          endcase
+        end
+     end 
+
+endmodule
+`timescale  100 ps / 10 ps
+
+module D2_4E_HXILINX_Scheme1 (D0, D1, D2, D3, A0, A1, E);
+    
+
+   output D0;
+   output D1;
+   output D2;
+   output D3;
+
+   input  A0;
+   input  A1;
+   input  E;
+  
+   reg D0;
+   reg D1;
+   reg D2;
+   reg D3;
+
+      always @ (A0 or A1 or E)
+      begin
+         if(!E)
+           {D3, D2, D1, D0} <= 4'b0000;
+        else
+        begin
+           case({A1,A0})
+             2'b00 : {D3,D2,D1,D0} <= 4'b0001;
+             2'b01 : {D3,D2,D1,D0} <= 4'b0010;
+             2'b10 : {D3,D2,D1,D0} <= 4'b0100;
+             2'b11 : {D3,D2,D1,D0} <= 4'b1000;
+          endcase
+        end
+     end 
+
+endmodule
+`timescale 1ns / 1ps
+
+module Scheme1(X1, 
+               X1_SWITCH, 
+               X2, 
+               X2_SWITCH, 
+               X3, 
+               Y0, 
+               Y1, 
+               Y2, 
+               Y3, 
+               Y4, 
+               Y5, 
+               Y6, 
+               Y7, 
+               Y8, 
+               Y9, 
+               Y10, 
+               Y11, 
+               Y12, 
+               Y13, 
+               Y14, 
+               Y15, 
+               Y16, 
+               Y17, 
+               Y18, 
+               Y19, 
+               Y20, 
+               Y21, 
+               Y22, 
+               Y23, 
+               Y24, 
+               Y25, 
+               Y26, 
+               Y27, 
+               Y28, 
+               Y29, 
+               Y30, 
+               Y31);
+
+    input X1;
+    input X1_SWITCH;
+    input X2;
+    input X2_SWITCH;
+    input X3;
+   output Y0;
+   output Y1;
+   output Y2;
+   output Y3;
+   output Y4;
+   output Y5;
+   output Y6;
+   output Y7;
+   output Y8;
+   output Y9;
+   output Y10;
+   output Y11;
+   output Y12;
+   output Y13;
+   output Y14;
+   output Y15;
+   output Y16;
+   output Y17;
+   output Y18;
+   output Y19;
+   output Y20;
+   output Y21;
+   output Y22;
+   output Y23;
+   output Y24;
+   output Y25;
+   output Y26;
+   output Y27;
+   output Y28;
+   output Y29;
+   output Y30;
+   output Y31;
+   
+   wire XLXN_32;
+   wire XLXN_56;
+   wire XLXN_57;
+   wire XLXN_58;
+   
+   (* HU_SET = "XLXI_1_0" *) 
+   D3_8E_HXILINX_Scheme1  XLXI_1 (.A0(X1), 
+                                 .A1(X2), 
+                                 .A2(X3), 
+                                 .E(XLXN_32), 
+                                 .D0(Y0), 
+                                 .D1(Y1), 
+                                 .D2(Y2), 
+                                 .D3(Y3), 
+                                 .D4(Y4), 
+                                 .D5(Y5), 
+                                 .D6(Y6), 
+                                 .D7(Y7));
+   (* HU_SET = "XLXI_3_3" *) 
+   D3_8E_HXILINX_Scheme1  XLXI_3 (.A0(X1), 
+                                 .A1(X2), 
+                                 .A2(X3), 
+                                 .E(XLXN_57), 
+                                 .D0(Y16), 
+                                 .D1(Y17), 
+                                 .D2(Y18), 
+                                 .D3(Y19), 
+                                 .D4(Y20), 
+                                 .D5(Y21), 
+                                 .D6(Y22), 
+                                 .D7(Y23));
+   (* HU_SET = "XLXI_4_2" *) 
+   D3_8E_HXILINX_Scheme1  XLXI_4 (.A0(X1), 
+                                 .A1(X2), 
+                                 .A2(X3), 
+                                 .E(XLXN_58), 
+                                 .D0(Y24), 
+                                 .D1(Y25), 
+                                 .D2(Y26), 
+                                 .D3(Y27), 
+                                 .D4(Y28), 
+                                 .D5(Y29), 
+                                 .D6(Y30), 
+                                 .D7(Y31));
+   (* HU_SET = "XLXI_5_1" *) 
+   D2_4E_HXILINX_Scheme1  XLXI_5 (.A0(X1_SWITCH), 
+                                 .A1(X2_SWITCH), 
+                                 .E(), 
+                                 .D0(XLXN_32), 
+                                 .D1(XLXN_56), 
+                                 .D2(XLXN_57), 
+                                 .D3(XLXN_58));
+   (* HU_SET = "XLXI_18_4" *) 
+   D3_8E_HXILINX_Scheme1  XLXI_18 (.A0(X1), 
+                                  .A1(X2), 
+                                  .A2(X3), 
+                                  .E(XLXN_56), 
+                                  .D0(Y8), 
+                                  .D1(Y9), 
+                                  .D2(Y10), 
+                                  .D3(Y11), 
+                                  .D4(Y12), 
+                                  .D5(Y13), 
+                                  .D6(Y14), 
+                                  .D7(Y15));
+endmodule

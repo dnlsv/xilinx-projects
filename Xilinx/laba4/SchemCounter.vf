@@ -1,0 +1,87 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : SchemCounter.vf
+// /___/   /\     Timestamp : 04/29/2020 20:09:22
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family virtex5 -verilog D:/Xilinx/laba4/SchemCounter.vf -w D:/Xilinx/laba4/SchemCounter.sch
+//Design Name: SchemCounter
+//Device: virtex5
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module SchemCounter(C, 
+                    J, 
+                    K, 
+                    notQ1, 
+                    Q1);
+
+    input C;
+    input J;
+    input K;
+   output notQ1;
+   output Q1;
+   
+   wire XLXN_18;
+   wire XLXN_19;
+   wire XLXN_63;
+   wire XLXN_73;
+   wire XLXN_75;
+   wire XLXN_76;
+   wire XLXN_83;
+   wire XLXN_90;
+   wire XLXN_92;
+   wire XLXN_96;
+   wire XLXN_102;
+   wire Q1_DUMMY;
+   wire notQ1_DUMMY;
+   
+   assign notQ1 = notQ1_DUMMY;
+   assign Q1 = Q1_DUMMY;
+   INV  XLXI_2 (.I(XLXN_19), 
+               .O(XLXN_90));
+   INV  XLXI_3 (.I(XLXN_18), 
+               .O(XLXN_92));
+   INV  XLXI_7 (.I(XLXN_75), 
+               .O(Q1_DUMMY));
+   INV  XLXI_8 (.I(XLXN_76), 
+               .O(notQ1_DUMMY));
+   AND3  XLXI_11 (.I0(C), 
+                 .I1(J), 
+                 .I2(notQ1_DUMMY), 
+                 .O(XLXN_63));
+   AND3  XLXI_12 (.I0(Q1_DUMMY), 
+                 .I1(K), 
+                 .I2(C), 
+                 .O(XLXN_73));
+   AND2  XLXI_29 (.I0(XLXN_92), 
+                 .I1(XLXN_102), 
+                 .O(XLXN_83));
+   AND2  XLXI_30 (.I0(XLXN_102), 
+                 .I1(XLXN_90), 
+                 .O(XLXN_96));
+   OR2  XLXI_31 (.I0(XLXN_90), 
+                .I1(XLXN_63), 
+                .O(XLXN_18));
+   OR2  XLXI_32 (.I0(XLXN_73), 
+                .I1(XLXN_92), 
+                .O(XLXN_19));
+   OR2  XLXI_34 (.I0(notQ1_DUMMY), 
+                .I1(XLXN_83), 
+                .O(XLXN_75));
+   OR2  XLXI_35 (.I0(XLXN_96), 
+                .I1(Q1_DUMMY), 
+                .O(XLXN_76));
+   INV  XLXI_37 (.I(C), 
+                .O(XLXN_102));
+endmodule

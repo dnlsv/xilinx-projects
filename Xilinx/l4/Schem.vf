@@ -1,0 +1,137 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : Schem.vf
+// /___/   /\     Timestamp : 05/14/2020 12:45:39
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family virtex5 -verilog D:/Xilinx/l4/Schem.vf -w D:/Xilinx/l4/Schem.sch
+//Design Name: Schem
+//Device: virtex5
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 100 ps / 10 ps
+
+module FJKC_HXILINX_Schem(Q, C, CLR, J, K);
+   
+   output             Q;
+
+   input 	      C;	
+   input 	      CLR;	
+   input              J;
+   input              K;
+   
+   parameter INIT = 1'b0;
+   reg                Q = INIT;
+
+
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  Q <= 1'b0;
+	else
+        begin
+           if(!J)
+           begin
+              if(K)
+              Q <= 1'b0;
+           end
+           else
+           begin
+              if(!K)
+              Q <= 1'b1;
+              else 
+              Q <= !Q;
+           end
+        end
+     end
+   
+endmodule
+`timescale 1ns / 1ps
+
+module Schem(C, 
+             X, 
+             Q0, 
+             Q1, 
+             Q2, 
+             Q3, 
+             Q4);
+
+    input C;
+    input X;
+   output Q0;
+   output Q1;
+   output Q2;
+   output Q3;
+   output Q4;
+   
+   wire XLXN_43;
+   wire XLXN_47;
+   wire XLXN_49;
+   wire XLXN_83;
+   wire XLXN_96;
+   wire Q0_DUMMY;
+   wire Q1_DUMMY;
+   wire Q2_DUMMY;
+   wire Q3_DUMMY;
+   wire Q4_DUMMY;
+   
+   assign Q0 = Q0_DUMMY;
+   assign Q1 = Q1_DUMMY;
+   assign Q2 = Q2_DUMMY;
+   assign Q3 = Q3_DUMMY;
+   assign Q4 = Q4_DUMMY;
+   (* HU_SET = "XLXI_1_4" *) 
+   FJKC_HXILINX_Schem #( .INIT(1'b0) ) XLXI_1 (.C(C), 
+                              .CLR(XLXN_83), 
+                              .J(X), 
+                              .K(X), 
+                              .Q(Q0_DUMMY));
+   (* HU_SET = "XLXI_5_0" *) 
+   FJKC_HXILINX_Schem #( .INIT(1'b0) ) XLXI_5 (.C(XLXN_43), 
+                              .CLR(XLXN_83), 
+                              .J(X), 
+                              .K(X), 
+                              .Q(Q1_DUMMY));
+   (* HU_SET = "XLXI_6_1" *) 
+   FJKC_HXILINX_Schem #( .INIT(1'b0) ) XLXI_6 (.C(XLXN_96), 
+                              .CLR(XLXN_83), 
+                              .J(X), 
+                              .K(X), 
+                              .Q(Q2_DUMMY));
+   (* HU_SET = "XLXI_7_2" *) 
+   FJKC_HXILINX_Schem #( .INIT(1'b0) ) XLXI_7 (.C(XLXN_47), 
+                              .CLR(XLXN_83), 
+                              .J(X), 
+                              .K(X), 
+                              .Q(Q3_DUMMY));
+   (* HU_SET = "XLXI_8_3" *) 
+   FJKC_HXILINX_Schem #( .INIT(1'b0) ) XLXI_8 (.C(XLXN_49), 
+                              .CLR(XLXN_83), 
+                              .J(X), 
+                              .K(X), 
+                              .Q(Q4_DUMMY));
+   VCC  XLXI_9 (.P(XLXN_83));
+   INV  XLXI_20 (.I(Q1_DUMMY), 
+                .O(XLXN_96));
+   INV  XLXI_21 (.I(Q0_DUMMY), 
+                .O(XLXN_43));
+   INV  XLXI_22 (.I(Q2_DUMMY), 
+                .O(XLXN_47));
+   INV  XLXI_23 (.I(Q3_DUMMY), 
+                .O(XLXN_49));
+   AND5  XLXI_32 (.I0(Q0_DUMMY), 
+                 .I1(XLXN_96), 
+                 .I2(XLXN_47), 
+                 .I3(XLXN_49), 
+                 .I4(Q4_DUMMY), 
+                 .O(XLXN_83));
+endmodule
