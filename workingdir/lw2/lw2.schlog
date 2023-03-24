@@ -1,5 +1,0 @@
-select figure at 2332 209 8 -branches -sn=1
-select all in 803 209 2332 1032 -branches -enclosed -sn=1
-delete selection -sn=1
-select figure at 939 582 8 -branches -sn=1
-select figure at 809 428 8 -branches -sn=1

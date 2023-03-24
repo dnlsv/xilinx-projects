@@ -1,0 +1,9 @@
+# MS Visual Studio #
+.vs
+Debug/
+
+# ISE Design Suite #
+ipcore_dir/
+iseconfig/
+working_dir/
+*.schlog
